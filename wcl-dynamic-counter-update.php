@@ -5,7 +5,7 @@
  * Description:       A counter that increments by a random amount (8-9) per minute and saves it in the database.
  * Version:           1.0
  * Requires at least: 5.6
- * Tested up to:      6.6
+ * Tested up to:      6.7
  * Requires PHP:      7.2
  * Author:            Forkan Hossain
  * Author URI:        https://github.com/forkanhossain
