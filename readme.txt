@@ -1,4 +1,4 @@
-* WCL Dynamic Counter Update
+# WCL Dynamic Counter Update
 
 A WordPress plugin that displays a dynamic counter. The counter automatically increments by a random value (between 8-9) every minute and stores the value in the database. Ideal for showcasing stats, visitor counts, or other incrementing numbers.
 
