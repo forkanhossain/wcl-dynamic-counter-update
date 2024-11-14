@@ -1,54 +1,59 @@
-=== WCL Dynamic Counter Update ===
-Contributors: ForkanHossain
-Tags: counter, shortcode, cron, random increment, statistics
-Requires at least: 5.6
-Tested up to: 6.7
-Requires PHP: 7.2
-Stable tag: 1.0
-Donate Link: https://wise.com/pay/me/mdforkanh
-License: GPL v3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+# WCL Dynamic Counter Update
 
-A dynamic counter that increments by a random value every minute and saves it in the database for display.
+A WordPress plugin that displays a dynamic counter. The counter automatically increments by a random value (between 8-9) every minute and stores the value in the database. Ideal for showcasing stats, visitor counts, or other incrementing numbers.
 
-== Description ==
+## Features
 
-**WCL Dynamic Counter Update** is a WordPress plugin designed to create a dynamic counter that updates itself by a random increment (8-9) every minute. The counter value is stored in the database and can be displayed anywhere on your website using a simple shortcode. Additionally, an admin settings page allows for manual reset of the counter.
+- **Automatic Increment**: The counter increases by a random amount (8-9) every minute.
+- **Shortcode Display**: Easily display the counter on any page or post using a simple shortcode.
+- **Admin Settings**: Adjust the counter’s starting value from the WordPress admin settings page.
+- **Efficient**: Utilizes a one-minute custom cron job for lightweight performance.
 
-### Key Features:
-- **Automatic Increment**: The counter increases every minute by a random amount between 8 and 9.
-- **Easy Display**: Use the `[wcl_dynamic_counter]` shortcode to place the counter on any page or post.
-- **Customizable Starting Value**: Admins can manually set the counter value via the settings page.
-- **Lightweight and Efficient**: Runs on a one-minute custom cron job for minimal performance impact.
+## Installation
 
-== Installation ==
+1. Clone or download the plugin repository to your WordPress `wp-content/plugins` directory:
+   ```bash
+   git clone https://github.com/forkanhossain/wcl-dynamic-counter-update.git
+Activate the plugin in the WordPress admin under Plugins.
+Use the [wcl_dynamic_counter] shortcode in any post or page to display the counter.
 
-1. Upload the `wcl-dynamic-counter-update` folder to the `/wp-content/plugins/` directory or install the plugin through the WordPress Plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Use the `[wcl_dynamic_counter]` shortcode on any page or post where you want to display the counter.
-4. Go to **Counter Settings** in the WordPress admin menu to manually set or reset the counter value.
+## Usage
+Shortcode: To display the counter, add [wcl_dynamic_counter] to the desired location within a post or page.
+Settings Page: Access the Counter Settings page in the WordPress admin to manually set or reset the counter value.
 
-== Frequently Asked Questions ==
+## Admin Settings
+The plugin provides a simple admin page where you can:
 
-= How do I display the counter? =
-Use the `[wcl_dynamic_counter]` shortcode in the content editor of any page or post.
+Set a custom starting value for the counter.
+Reset the counter as needed.
 
-= Can I set a custom starting value for the counter? =
-Yes, go to the **Counter Settings** page in the WordPress admin and enter a custom value.
+## Code Overview
+Cron-Based Increment
+The plugin registers a custom cron schedule (every minute) and hooks into it to increment the counter by a random value (between 8 and 9). The updated value is saved in the WordPress options table, making it accessible across sessions.
 
-= What happens if I deactivate the plugin? =
-The scheduled event that updates the counter is automatically cleared when you deactivate the plugin.
+## Shortcode Display
+The [wcl_dynamic_counter] shortcode outputs the current counter value in HTML, styled with CSS and JavaScript files to display it dynamically.
 
-== Changelog ==
+## Files and Structure
+wcl-dynamic-counter-update.php: Main plugin file with activation, deactivation, cron setup, and shortcode functions.
+/js/wcl-counter.js: JavaScript for dynamic updates if needed.
+/css/wcl-style.css: Basic styling for the counter display.
 
-= 1.0 =
-* Initial release with automatic counter increment and admin settings page for manual reset.
+## License
+This project is licensed under the GPL v3 or later - see the LICENSE file for details.
 
-== Usage ==
+## Frequently Asked Questions
+How do I add the counter to my site?
+Use the [wcl_dynamic_counter] shortcode on any page or post where you want to display the counter.
 
-To display the counter on a page or post, add the following shortcode:
-`[wcl_dynamic_counter]`
+Can I set a custom starting value?
+Yes, go to the Counter Settings page in the WordPress admin dashboard to enter a custom value.
 
-== License ==
+Does deactivating the plugin reset the counter?
+No, the counter value is stored in the database and will persist across sessions. However, deactivating the plugin will stop the scheduled cron job until the plugin is reactivated.
 
-This plugin is licensed under the GPL v3 or later. See the license text at https://www.gnu.org/licenses/gpl-3.0.html.
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request with improvements or bug fixes.
+
+## Author
+Forkan Hossain
